@@ -238,8 +238,19 @@ print('key1' in dict_example)  #check for keys if they exist in dictionary
 print('key4' in dict_example)
 
 
-#Dict Methods ( Built In Functionality)
+#Dict Methods (Built-In Functionality)
 
 print(list(dict_example.keys()))
 print(list(dict_example.values()))
 print(list(dict_example.items()))
+#dict_example.update() #join two dictionaries
+print(dict_example.pop('key1')) # Removes the key value pair from the dict and returns the value
+print(dict_example)
+
+# Dict Loops
+
+for i in dict_example:
+    print(i)
+
+for i,j in dict_example.items():
+    print(f"{i} : {j}")
