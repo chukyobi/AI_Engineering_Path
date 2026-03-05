@@ -17,8 +17,13 @@ SELECT
 FROM [dbo].[customers]
 WHERE [country] = 'Germany' AND [score] > 400;
 
+SELECT *
+FROM [dbo].[customers]
+ORDER BY [country] ASC, [score] DESC;
 
-SELECT * 
-    FROM [dbo].[customers]
-   -- WHERE [country] = 'Germany'
-    ORDER BY [country], [score] DESC;
+SELECT 
+        [country],
+        SUM(score) [total_score]
+FROM [dbo].[customers]
+GROUP BY [country]
+ORDER BY [country] ASC,  SUM(score) DESC;
