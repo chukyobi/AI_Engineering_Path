@@ -20,5 +20,5 @@ WHERE [country] = 'Germany' AND [score] > 400;
 
 SELECT * 
     FROM [dbo].[customers]
-    WHERE [country] = 'Germany'
+   -- WHERE [country] = 'Germany'
     ORDER BY [country], [score] DESC;
