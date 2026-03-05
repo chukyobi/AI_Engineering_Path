@@ -39,5 +39,33 @@ SELECT
 FROM [dbo].[customers]
 WHERE [score] != 0
 GROUP BY [country]
-HAVING AVG(score) < 900
+HAVING AVG(score) > 430
 ORDER BY [average_score] DESC;
+
+SELECT DISTINCT
+        [country]
+FROM [dbo].[customers]
+ORDER BY [country] ASC;
+
+SELECT TOP (3) 
+[first_name] AS [customer_name],
+MAX(score) AS [Highest_score]
+FROM [dbo].[customers]
+GROUP BY [first_name]
+HAVING MAX(score) > 500
+ORDER BY [Highest_score] DESC;
+
+SELECT * 
+FROM [dbo].[orders]
+
+SELECT
+        [id],
+        [first_name],
+        'new customer' AS [customer_status]
+FROM [dbo].[customers]
+
+CREATE TABLE persons(
+        id INT NOT NULL,
+        person_name VARCHAR(50) NOT NULL,
+        birth_date DATE NOT NULL,
+)
