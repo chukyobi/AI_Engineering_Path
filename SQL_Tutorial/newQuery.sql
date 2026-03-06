@@ -110,3 +110,8 @@ WHERE id = 7;
 
 UPDATE dbo.humans
 SET birth_date = '1990-01-01';
+
+
+SELECT * 
+FROM customers
+WHERE first_name LIKE '___T%';
