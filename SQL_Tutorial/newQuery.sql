@@ -64,8 +64,49 @@ SELECT
         'new customer' AS [customer_status]
 FROM [dbo].[customers]
 
-CREATE TABLE persons(
+
+
+CREATE TABLE humans(
         id INT NOT NULL,
         person_name VARCHAR(50) NOT NULL,
-        birth_date DATE NOT NULL,
+        birth_date DATE,
+        phone_number VARCHAR(20) NOT NULL,
+        CONSTRAINT pk_humans PRIMARY KEY (id)
 )
+
+-- INSERT INTO [dbo].[persons] (id, person_name, birth_date, email)
+-- VALUES (1, 'John Doe', '1990-01-01', 'john.doe@example.com');
+-- ALTER TABLE persons
+-- ADD email VARCHAR(50) NOT NULL;
+
+SELECT * FROM customers;
+SELECT * FROM humans;
+
+
+-- ALTER TABLE persons
+-- DROP COLUMN phone_number;
+
+
+-- DROP TABLE persons;
+
+
+INSERT INTO [dbo].[customers] (id, first_name, country, score)
+VALUES (7, 'Jay Clinton', 'USA', 450);
+
+
+INSERT INTO dbo.humans (id, person_name, birth_date, phone_number)
+SELECT 
+[id],
+[first_name],
+NULL,
+'no phone number'
+FROM dbo.customers;
+
+
+UPDATE dbo.humans
+SET birth_date = '1990-01-01',
+phone_number = '123-456-7890'
+WHERE id = 7;
+
+UPDATE dbo.humans
+SET birth_date = '1990-01-01';
