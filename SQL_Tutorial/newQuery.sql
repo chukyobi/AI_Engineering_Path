@@ -115,3 +115,13 @@ SET birth_date = '1990-01-01';
 SELECT * 
 FROM customers
 WHERE first_name LIKE '___T%';
+
+
+SELECT 
+     dbo.customers.id,
+     dbo.customers.first_name,
+     dbo.orders.order_date,
+     dbo.orders.sales
+FROM dbo.customers
+INNER JOIN dbo.orders
+ON dbo.customers.id = dbo.orders.customer_id
